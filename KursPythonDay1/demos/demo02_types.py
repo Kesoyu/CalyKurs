@@ -13,9 +13,9 @@ def Basic_types():
     print(type(liczba))
     print(liczba.real, liczba.imag, type(liczba))
 
-    import math # biblioteka math dla normalnych liczb
+    import math # biblioteka mathmath dla normalnych liczb
 
-    import cmath # biblioteka math dla liczb urojonych
+    import cmath # biblioteka mathmath dla liczb urojonych
 
     #boolean
     info = True
