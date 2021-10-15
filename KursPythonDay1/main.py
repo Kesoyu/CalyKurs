@@ -16,7 +16,7 @@ def print_hi(name):
 if __name__ == '__main__':
     from demos.demo02_types import Basic_types, Typy_Kolekcyjne, Typy_Binarne  # import lokalny
     from demos.demo03_structures import Decyzje
-    from  exercises.Ex01 import TestowanieKilkuPeseli, ObwodyPola
+    from  exercises.Ex01 import TestowanieKilkuPeseli, ObwodyPola,PoleObjetoscWalca
     # print_hi('Bartosz')
     # print(dp.DemoPrint.__doc__)  # __doc__ wyciaganie dokumentacji i jeje wypisywanie
     # dp.DemoPrint()
@@ -24,6 +24,7 @@ if __name__ == '__main__':
     # Typy_Kolekcyjne()
     # Typy_Binarne()
     # Decyzje()
-    TestowanieKilkuPeseli()
-    ObwodyPola()
+    # TestowanieKilkuPeseli()
+    # ObwodyPola()
+    PoleObjetoscWalca()
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

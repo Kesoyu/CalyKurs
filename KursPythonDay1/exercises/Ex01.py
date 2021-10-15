@@ -21,5 +21,10 @@ def ObwodyPola():
 #tip do listy funkcji biblioteki figury dodac funkcję pole prostokata
 
 def PoleObjetoscWalca():
-    from libs.mathmath.kola import import
+    from libs.mathmath.kola import ObjetoscWalca, PoleWalca
+    promienie = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    for x in promienie:
+        print(f"Wyniki objetosc: {ObjetoscWalca(x,x)} dla {x} i {x}")
+        print(f"Wyniki Pole: {PoleWalca(x,x)} dla {x} i {x}")
+
 
