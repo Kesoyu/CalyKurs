@@ -1,3 +1,6 @@
+import math
+
+
 def Pole(r):
     wynik = 3.14*(r**2)
     return wynik
@@ -57,3 +60,19 @@ def FunkcjaKwadratowa(a,b,c):
         return (x1,x2)
     if delta<0:
         raise Exception("to nie jest rownaie kwadratowe")
+
+def Kolo(promien, **param):
+    if param.get('typ') == "obwod":
+        return 2*math.pi * promien
+    elif param.get('typ') == "pole":
+        return math.pi * math.pow(promien,2)
+    else:
+        raise Exception("należy podać parametr pole lub obwód")
+
+def Walec(r,h,**param):
+    if param.get('typ') == "pole":
+        return PoleWalca(r,h)
+    elif param.get('typ') == 'obj':
+        return ObjetoscWalca(r,h)
+    else:
+        raise Exception("nalezy podac parametr pole lub obj")

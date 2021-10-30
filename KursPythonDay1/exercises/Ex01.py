@@ -43,8 +43,11 @@ def ObliczFunkcjeKwadratowa():
     doPodstawienia = [(2,5,3), (2,5,2),(3,5,2),(7,2,0),(5,6,7),(1,2,1)]
     try:
         for a in doPodstawienia:
-            x,y=FunkcjaKwadratowa(a[0],a[1],a[2])
-            print(f"x1={x:.2f}\nx2={y:.2f}")
+            if a[0]!=0:
+                x,y=FunkcjaKwadratowa(a[0],a[1],a[2])
+                print(f"x1={x:.2f}\nx2={y:.2f}")
+            else:
+                print("A nie moze byc zerem")
     except Exception as e:
         print(e)
 
