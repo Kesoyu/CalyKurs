@@ -27,4 +27,25 @@ def PoleObjetoscWalca():
         print(f"Wyniki objetosc: {ObjetoscWalca(x,x)} dla {x} i {x}")
         print(f"Wyniki Pole: {PoleWalca(x,x)} dla {x} i {x}")
 
+def ObliczMetodaWyznacznikow():
+    from libs.mathmath.kola import MetodaWyznacznikow
+    doPodstawienia = [(1,2,3,4,5,6), (2,3,4,5,6,7),(3,4,5,6,7,8),(4,5,6,7,8,9),(5,6,7,8,9,10)]
+    try:
+        for a in doPodstawienia:
+
+            x, y = MetodaWyznacznikow(a[0],a[1],a[2],a[3],a[4],a[5])
+            print(f"x={x:.2f}\ny={y:.2f}")
+    except Exception as e:
+        print(e)
+
+def ObliczFunkcjeKwadratowa():
+    from libs.mathmath.kola import FunkcjaKwadratowa
+    doPodstawienia = [(2,5,3), (2,5,2),(3,5,2),(7,2,0),(5,6,7),(1,2,1)]
+    try:
+        for a in doPodstawienia:
+            x,y=FunkcjaKwadratowa(a[0],a[1],a[2])
+            print(f"x1={x:.2f}\nx2={y:.2f}")
+    except Exception as e:
+        print(e)
+
 

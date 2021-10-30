@@ -24,3 +24,36 @@ def ObjetoscWalca(r,h):
     pk=Pole(r)
     wynik=pk*h
     return wynik
+
+#dodacj funkcje obliczajace pole prostokata pole walca objetosc walca
+
+#dodac funkcję pozwalającą rozwiać ukłąd 2 ch rownań metoda wyznaczników
+#ax +by = c
+#dx +ey = f
+
+def MetodaWyznacznikow(a,b,c,d,e,f):
+    W=a*e - b*d
+    if W!=0:
+        Wx=c*e - b*f
+        Wy=a*f - c*d
+        x=Wx/W
+        y=Wy/W
+        return (x,y)
+    else:
+        raise Exception("Błąd")
+
+#dodac funkcje pozwalajacą roziwazac rownaie kwadratowe (ax2+bx+c=0)
+
+def FunkcjaKwadratowa(a,b,c):
+    from math import sqrt
+    #b2-4ac
+    delta=(b*b)-(4*a*c)
+    if delta==0:
+        x1=x2=-b/(a*2)
+        return (x1,x2)
+    if delta>0:
+        x1=(-b-sqrt(delta))/(2*a)
+        x2=(-b+sqrt(delta))/(2*a)
+        return (x1,x2)
+    if delta<0:
+        raise Exception("to nie jest rownaie kwadratowe")
