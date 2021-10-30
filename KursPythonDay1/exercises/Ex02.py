@@ -92,3 +92,11 @@ def Test_Walec():
                 sys.exit()
         except Exception as e:
             print(e)
+
+def Test_Pesel():
+    from libs.tools.PersonalAnalysing import DateFromPesel, GenderFromPesel
+    # pesel=input("Podaj pesel do testow\n")
+    pesele = ['03321412356', '00221412345', '99012345678', '95022134567']
+    for x in pesele:
+        print(f"Data urodzenia osob o peselu {x} to {DateFromPesel(x)}")
+        print(f"Płeć osob o peselu {x} to {GenderFromPesel(x)}")
