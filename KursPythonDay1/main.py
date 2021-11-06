@@ -16,6 +16,7 @@ def print_hi(name):
 if __name__ == '__main__':
     from demos.demo02_types import Basic_types, Typy_Kolekcyjne, Typy_Binarne  # import lokalny
     from demos.demo03_structures import Decyzje
+    from demos.demo04_file import Pliki
     from  exercises.Ex01 import TestowanieKilkuPeseli, ObwodyPola,PoleObjetoscWalca, ObliczMetodaWyznacznikow, ObliczFunkcjeKwadratowa
     from  exercises.Ex02 import Test_RozpoczecieDnia, Test_Kolo, Test_Walec, Test_Pesel
     # print_hi('Bartosz')
@@ -33,6 +34,9 @@ if __name__ == '__main__':
     # Test_RozpoczecieDnia()
     # Test_Kolo()
     # Test_Walec()
-    Test_Pesel()
+    # Test_Pesel()
+    Pliki()
+
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
