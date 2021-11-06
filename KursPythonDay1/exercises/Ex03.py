@@ -12,3 +12,37 @@ def LudzieWSzafkach():
     print(f"Człek{p['Adam']}")
     print(f"Człek{p['Kaziu']}")
     print(f"Człek{p['Nikodem']}")
+
+def Filmoteka():
+    from xml.etree.ElementTree import Element, ElementTree, SubElement, parse, dump
+    while True:
+        print("Witma w mojej superowej aplikacji")
+        wybor = input("\n1 - Dodaj Film\n2 - Wyświetl Filmy\n3 - Zabij mnie\n")
+        if wybor == "1":
+            rezyser = input("Prosze podac rezysera filmu\n")
+            tytul = input("Prosze podac tytul filmu\n")
+            rok = input("Prosze podac rok wydania filmu\n")
+            gatunek = input("Prosze podac gatunek filmu\n")
+            literatura = parse(r'Files\film.xml')
+            r = literatura.getroot()
+            film = SubElement(r, 'book', gatunek=gatunek)
+            SubElement(film, 'rezyser').text = rezyser
+            SubElement(film, 'tytuł').text = tytul
+            SubElement(film, 'rok').text = rok
+            SubElement(film, 'gatunek').text = gatunek
+            ElementTree(r).write(r'Files\film.xml', encoding="UTF-8", xml_declaration=True, method='xml')
+        elif wybor == "2":
+            dane = parse(r'Files\film.xml')
+            filmy = dane.getroot()
+            filmy = filmy.findall('book')
+            print("^*" * 50)
+            for b in filmy:
+                rez = b.find('rezyser').text
+                ty = b.find('tytuł').text
+                roczek = b.find('rok').text
+                ga = b.find('gatunek').text
+                print(f"Filmz gatunku {ga} pt''{ty}'' wyrezyserowany przez {rez} w:{roczek}")
+        else:
+            import sys
+            print("Naura")
+            sys.exit()
