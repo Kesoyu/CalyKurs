@@ -1,6 +1,6 @@
 def Pliki():
     while(True):
-        odp = input("Zapis do pliku txt danych podanych w konsoli\n1 - podaj dane do zapisu\n2-odczytaj dane z txt\n3 - zapis danych do CSV\n4 - odczyt danych CSV\n5 - Proste pliki binarne\n6 - Pliki binarne - pickle, shelve\nK-koniec\n")
+        odp = input("Zapis do pliku txt danych podanych w konsoli\n1 - podaj dane do zapisu\n2-odczytaj dane z txt\n3 - zapis danych do CSV\n4 - odczyt danych CSV\n5 - Proste pliki binarne\n6 - Pliki binarne - pickle, shelve\n7 - Pliki .xml\nK-koniec\n")
         if odp=="1":
             print("^*"*30)
             dane = input("Podaj dane do zapisu w pliku\n")
@@ -128,6 +128,58 @@ def Pliki():
             print(f"Ksztalty warzyw{p['ksztalt_warzywa']}")
             print(f"Sposob{p['sposob']}")
             print(f"producent{p['producent']}")
+        elif odp=="7":
+            from  xml.etree.ElementTree import Element, ElementTree,SubElement,parse,dump
+            root = Element("books")
+            book = SubElement(root,'book', kategoria="lektora")
+            SubElement(book, 'tytuł').text = "Wesele"
+            cena = SubElement(book, "cena")
+            cena.text='30'
+            cena.attrib['waluta'] = "PLN"
+            SubElement(book, 'autor').text = "Stanisław Wyspiański"
+
+            book = SubElement(root, 'book', kategoria="sf")
+            SubElement(book, 'tytuł').text = "Player One"
+            cena = SubElement(book, "cena")
+            cena.text = '12.5'
+            cena.attrib['waluta'] = "EUR"
+            SubElement(book, 'autor').text = "Ernest Cline"
+            ElementTree(root).write(r'Files\books.xml',encoding="UTF-8",xml_declaration=True,method='xml')
+            daneXML= parse(r'Files\books.xml')
+            ksiazki=daneXML.getroot()
+            # print(ksiazki)
+            # for i in ksiazki.iter():
+            #     dump(i)
+            for i in ksiazki:
+                # print(i.tag, i.attrib,i.text)
+                autor = ""
+                tytul = ""
+                for k in i:
+                    # print(k.tag, k.attrib, k.text)
+                    if k.tag=="autor":
+                        autor = k.text
+                    if k.tag=="tytuł":
+                        tytul = k.text
+                print(f"{autor} napisał {tytul}")
+            ksiazki = ksiazki.findall('book')
+            print("^*"*50)
+            for b in ksiazki:
+                tytul = b.find('tytuł').text
+                autor = b.find('autor').text
+                cena = b.find('cena')
+                wartosc = cena.text
+                waluta = cena.get('waluta')
+                print(f"{autor} napisał {tytul} ktore kosztuje:{wartosc}{waluta}")
+            literatura = parse(r'Files\books.xml')
+            r=literatura.getroot()
+            book = SubElement(r, 'book', kategoria="fantsy")
+            SubElement(book, 'tytuł').text = "Wiedzmin"
+            cena = SubElement(book, "cena")
+            cena.text = '11'
+            cena.attrib['waluta'] = "EUR"
+            SubElement(book, 'autor').text = "Andrzej Sapkowski"
+            ElementTree(r).write(r'Files\books.xml', encoding="UTF-8", xml_declaration=True, method='xml')
+
         else:
             import sys
             print("do widzenia")

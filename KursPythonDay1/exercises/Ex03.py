@@ -4,6 +4,7 @@ def LudzieWSzafkach():
     plik['Adam'] = ['Adam','Małsz',68033154914]
     plik['Kaziu'] = ['Bartosz','Kunicki',72010866459]
     plik['Nikodem'] = ['Kuba','Kowalski',51022591296]
+
     plik.sync()
     plik.close()
     # odczyt z plikow shelve

@@ -36,8 +36,8 @@ if __name__ == '__main__':
     # Test_Kolo()
     # Test_Walec()
     # Test_Pesel()
-    # Pliki()
-    LudzieWSzafkach()
+    Pliki()
+    # LudzieWSzafkach()
 
 
 
