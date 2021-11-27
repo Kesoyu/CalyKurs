@@ -18,6 +18,9 @@ if __name__ == '__main__':
     from demos.demo03_structures import Decyzje
     from demos.demo04_file import Pliki
     from exercises.Ex03 import LudzieWSzafkach, Filmoteka
+
+    from demos.demo5_moduly import DemosModuly, DaneKoronawirusWorld, KursyWalutNBP
+    from exercises.Ex04 import ZapisInfoDoPliku, SzukanieKsiazek
     from  exercises.Ex01 import TestowanieKilkuPeseli, ObwodyPola,PoleObjetoscWalca, ObliczMetodaWyznacznikow, ObliczFunkcjeKwadratowa
     from  exercises.Ex02 import Test_RozpoczecieDnia, Test_Kolo, Test_Walec, Test_Pesel
     # print_hi('Bartosz')
@@ -37,9 +40,12 @@ if __name__ == '__main__':
     # Test_Walec()
     # Test_Pesel()
     # Pliki()
-    Filmoteka()
+    # Filmoteka()
     # LudzieWSzafkach()
-
-
+    # DemosModuly()
+    # ZapisInfoDoPliku()
+    # DaneKoronawirusWorld()
+    # KursyWalutNBP()
+    SzukanieKsiazek()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

@@ -15,6 +15,7 @@ def LudzieWSzafkach():
 
 def Filmoteka():
     from xml.etree.ElementTree import Element, ElementTree, SubElement, parse, dump
+    import os
     while True:
         print("Witma w mojej superowej aplikacji")
         wybor = input("\n1 - Dodaj Film\n2 - Wyświetl Filmy\n3 - Zabij mnie\n")
@@ -23,14 +24,15 @@ def Filmoteka():
             tytul = input("Prosze podac tytul filmu\n")
             rok = input("Prosze podac rok wydania filmu\n")
             gatunek = input("Prosze podac gatunek filmu\n")
-            literatura = parse(r'Files\film.xml')
-            r = literatura.getroot()
-            film = SubElement(r, 'book', gatunek=gatunek)
-            SubElement(film, 'rezyser').text = rezyser
-            SubElement(film, 'tytuł').text = tytul
-            SubElement(film, 'rok').text = rok
-            SubElement(film, 'gatunek').text = gatunek
-            ElementTree(r).write(r'Files\film.xml', encoding="UTF-8", xml_declaration=True, method='xml')
+            if os.path.exists(os.getcwd() + r'\Files/film.xml'):
+                literatura = parse(r'Files\film.xml')
+                r = literatura.getroot()
+                film = SubElement(r, 'book', gatunek=gatunek)
+                SubElement(film, 'rezyser').text = rezyser
+                SubElement(film, 'tytuł').text = tytul
+                SubElement(film, 'rok').text = rok
+                SubElement(film, 'gatunek').text = gatunek
+                ElementTree(r).write(r'Files\film.xml', encoding="UTF-8", xml_declaration=True, method='xml')
         elif wybor == "2":
             dane = parse(r'Files\film.xml')
             filmy = dane.getroot()
