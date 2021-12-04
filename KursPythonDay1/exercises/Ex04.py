@@ -59,7 +59,7 @@ def SzukanieKsiazek():
         tak2 = j.find("a")
         wszyscyAutorzy.append(tak2.text)
 
-    for h in len(wszystkieNazwy):
+    for h in range(len(wszystkieNazwy)):
         wszystkieKsiegi.append((wszystkieNazwy[h], wszyscyAutorzy[h]))
 
     for k in wszystkieKsiegi:
